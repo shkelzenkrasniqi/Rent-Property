@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Rent_Property.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<RentContext>(options =>
+{
+    options.UseSqlServer("Server=DESKTOP-RU06NKC;Database=RentPropert;Integrated Security=True;TrustServerCertificate=True;");
+});
 
 var app = builder.Build();
 
