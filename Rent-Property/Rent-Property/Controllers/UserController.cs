@@ -25,5 +25,6 @@ namespace Rent_Property.Controllers
             List<User> list = _context.Users.ToList();
             return StatusCode(StatusCodes.Status200OK, list);
         }
+
     }
 }
